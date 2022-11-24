@@ -1,9 +1,9 @@
-public class Comanda{
-    private String consumo;
+public abstract class Comanda{
+    private String consumo[]= new String[10];
     private double valor;
 
-    public String getConsumo() {
-        return consumo;
+    public String getConsumo(int i) {
+        return consumo[i];
     }
     
     public double getValor() {
@@ -11,7 +11,11 @@ public class Comanda{
     }
 
     public void setConsumo(String c) {
-        this.consumo = c;
+        int consumidos;
+        consumidos = consumidos();
+        if(consumidos < consumo.length){
+        this.consumo[consumidos] = c;
+        }
     }
 
     public void setValor(double v) {
@@ -32,8 +36,22 @@ public class Comanda{
 
     public void listarConsumo(){
         String print;
-        print = getConsumo();
-
+        int consumidos;
+        consumidos = consumidos();
+        for(int i = 0; i < consumidos; i++){
+        print = getConsumo(i);
         System.out.println(print);
+        }
+    }
+
+    int consumidos(){
+        int qntd_cons = 0;
+        for(int i = 0; i < consumo.length; i++){
+        if (consumo[i] == null){
+            qntd_cons++;
+        }
+    }
+    qntd_cons = consumo.length - qntd_cons;
+        return qntd_cons;
     }
 }
