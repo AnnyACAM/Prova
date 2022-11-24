@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public abstract class Comanda{
-    private String consumo[]= new String[10];
+    private ArrayList<String> consumo = new ArrayList<String>();
     private double valor;
 
     public String getConsumo(int i) {
-        return consumo[i];
+        return consumo.get(i);
     }
     
     public double getValor() {
@@ -11,11 +13,7 @@ public abstract class Comanda{
     }
 
     public void setConsumo(String c) {
-        int consumidos;
-        consumidos = consumidos();
-        if(consumidos < consumo.length){
-        this.consumo[consumidos] = c;
-        }
+        consumo.add (c);
     }
 
     public void setValor(double v) {
@@ -35,23 +33,9 @@ public abstract class Comanda{
     }
 
     public void listarConsumo(){
-        String print;
-        int consumidos;
-        consumidos = consumidos();
-        for(int i = 0; i < consumidos; i++){
-        print = getConsumo(i);
-        System.out.println(print);
+        for(int i = 0; i < consumo.size(); i++){
+        System.out.println(consumo.get(i));
         }
     }
 
-    int consumidos(){
-        int qntd_cons = 0;
-        for(int i = 0; i < consumo.length; i++){
-        if (consumo[i] == null){
-            qntd_cons++;
-        }
-    }
-    qntd_cons = consumo.length - qntd_cons;
-        return qntd_cons;
-    }
 }
