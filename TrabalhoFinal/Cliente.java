@@ -30,7 +30,7 @@ public class Cliente{
         this.comida.setValor(preco);
      }
 
-     public void setComanda(){
+     public void getComanda(){
         this.comida.listarConsumo();
         this.bebida.listarConsumo();
      }
