@@ -1,4 +1,8 @@
-public class Cliente{
+import java.util.Scanner;
+
+class Cliente{
+    Scanner scanf = new Scanner(System.in);
+
     private String nome;
     private String email;
     ComandaBebida bebida = new ComandaBebida();
@@ -20,19 +24,16 @@ public class Cliente{
         this.nome = nome;
     }
     
-    public void add_Bebida(String opcao,double preco){
-       this.bebida.setConsumo(opcao);
-       this.bebida.setValor(preco);
+    public void add_Bebida(int num_pedido){
+       this.bebida.setConsumo(this.bebida.getOpcao(num_pedido));
+       this.bebida.setValor(this.bebida.getPreco(num_pedido));
     }
 
-    public void add_Comida(String opcao,double preco){
-        this.comida.setConsumo(opcao);
-        this.comida.setValor(preco);
+    public void add_Comida(int num_pedido){
+        this.comida.setConsumo(this.comida.getOpcao(num_pedido));
+        this.comida.setValor(this.comida.getPreco(num_pedido));
      }
-
-     public void setComada(){
-
-     }
+     
      public void getComanda(){
         this.comida.listarConsumo();
         this.bebida.listarConsumo();
@@ -41,4 +42,5 @@ public class Cliente{
         tot_valor = bebida.getValor() + comida.getValor();
         System.out.println(tot_valor);
      }
+
 }
