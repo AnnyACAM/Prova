@@ -20,6 +20,11 @@ import java.util.ArrayList;
         opcao.add (3, "Suco");           preco.add(3, 2.50);
     }
 
+    public void novaBebida(String nome, double valor){
+       opcao.add(opcao.size(), nome);
+       preco.add(opcao.size(), valor);
+    }
+
     public void listaCardapio(){
         System.out.println("Num  |   preco  |   Bebida");
         for(int i = 0; i < opcao.size(); i++){
@@ -27,5 +32,7 @@ import java.util.ArrayList;
         }
     }
 
-
+    public int quantd_bebidas(){
+        return opcao.size();
+    }
 }
