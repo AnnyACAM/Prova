@@ -1,8 +1,8 @@
 public class Cliente{
     private String nome;
     private String email;
-    ComandaBebida bebida = new ComandaBebida(){};
-    ComandaComida comida  = new ComandaComida(){};
+    ComandaBebida bebida = new ComandaBebida();
+    ComandaComida comida  = new ComandaComida();
 
     public String getEmail() {
         return email;

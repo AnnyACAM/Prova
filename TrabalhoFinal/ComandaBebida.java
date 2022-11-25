@@ -1,4 +1,4 @@
-public abstract class ComandaBebida extends Comanda
+public class ComandaBebida extends Comanda
 {
   
 }
