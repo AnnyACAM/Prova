@@ -17,7 +17,7 @@ public abstract class Comanda{
     }
 
     public void setValor(double v) {
-        this.valor = v;
+        this.valor = this.valor + v;
     }
 
     public double calcular10porcento() {

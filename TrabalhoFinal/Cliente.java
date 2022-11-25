@@ -30,8 +30,15 @@ public class Cliente{
         this.comida.setValor(preco);
      }
 
+     public void setComada(){
+
+     }
      public void getComanda(){
         this.comida.listarConsumo();
         this.bebida.listarConsumo();
+
+        double tot_valor = 0.0;
+        tot_valor = bebida.getValor() + comida.getValor();
+        System.out.println(tot_valor);
      }
 }
