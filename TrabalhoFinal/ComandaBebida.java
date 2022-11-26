@@ -13,16 +13,24 @@ import java.util.ArrayList;
         return preco.get(i);
     }
 
+    public void setOpcao(String nome) {
+        opcao.add(nome);
+    }
+
+    public void setPreco(Double valor) {
+        preco.add(valor);
+    }
+
+    public void novaBebida(String nome, double valor){
+        setOpcao(nome);
+        setPreco(valor);
+     }
+
     public void Cardapio() {
         opcao.add (0, "Refrigerante");   preco.add(0, 5.90);
         opcao.add (1, "Agua");           preco.add(1, 1.90);
         opcao.add (2, "Suco Natural");   preco.add(2, 3.50);
         opcao.add (3, "Suco");           preco.add(3, 2.50);
-    }
-
-    public void novaBebida(String nome, double valor){
-       opcao.add(opcao.size(), nome);
-       preco.add(opcao.size(), valor);
     }
 
     public void listaCardapio(){
